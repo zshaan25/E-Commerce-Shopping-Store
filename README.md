@@ -3,7 +3,7 @@
 This is a React-based E-Commerce website developed as part of a Web Engineering course. It integrates **Firebase Firestore** for real-time CRUD operations and **Firebase Authentication** for secure login/signup with role-based access control.
 
 ## 🔗 Live Demo
-[👉 Click here to view the deployed project](https://your-app-id.web.app)
+[👉 Click here to view the deployed project](https://e-commerce-store-d1560.web.app/)
 
 ---
 
