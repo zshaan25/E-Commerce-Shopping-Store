@@ -1,14 +1,16 @@
 import Navbar from "./components/layouts/Navbar"
 import {BrowserRouter, Route, Routes} from "react-router-dom"
-import Shop from "./components/Pages/Shop"
-import ShopCategory from "./components/Pages/ShopCategory"
-import Product from "./components/Pages/Product"
-import Cart from "./components/Pages/Cart"
+import Shop from "./components/pages/Shop"
+import ShopCategory from "./components/pages/ShopCategory"
+import Product from "./components/pages/Product"
+import Cart from "./components/pages/Cart"
 import LoginSignup from "./components/auth/LoginSignup"
 import Footer from "./components/layouts/Footer"
 import men_banner from "./assets/banner.jpg"
 import women_banner from "./assets/women_banner.avif"
 import kids_banner from "./assets/kids_banner.jpg"
+import Admin from './components/views/home/Admin';
+
 function App() {
  
   return (
@@ -24,6 +26,7 @@ function App() {
         <Route path="/product/:productId" element={<Product/>}/>
         <Route path="/cart" element={<Cart/>}/>
         <Route path="/login" element={<LoginSignup/>}/>
+        <Route path="/admin" element={<Admin />} />
       </Routes>
       <Footer/>
       </BrowserRouter>
