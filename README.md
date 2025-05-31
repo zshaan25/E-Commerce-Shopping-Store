@@ -1,12 +1,69 @@
-# React + Vite
+# 🛒 E-Commerce Web Application
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is a React-based E-Commerce website developed as part of a Web Engineering course. It integrates **Firebase Firestore** for real-time CRUD operations and **Firebase Authentication** for secure login/signup with role-based access control.
 
-Currently, two official plugins are available:
+## 🔗 Live Demo
+[👉 Click here to view the deployed project](https://your-app-id.web.app)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 📁 Project Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 👨‍💻 User Features
+- User registration & login (Email/Password + Google)
+- Browse product catalog
+- Product detail view
+- Add/remove from cart
+- Checkout page with order summary
+- View order history & order status
+
+### 🛠️ Admin Features
+- Secure Admin Login
+- Add/Edit/Delete products
+- Manage stock
+- Update order statuses
+
+---
+
+## 🔧 Firebase Integration
+
+### 1. 🔐 Authentication
+- Firebase Auth with email/password and Google Sign-In.
+- Role is saved in Firestore (`users` collection) after signup.
+- Role determines access to admin features using conditional rendering.
+
+### 2. 💾 Firestore (CRUD Operations)
+
+#### Product Collection
+| Field | Type | Description |
+|-------|------|-------------|
+| `name` | string | Product name |
+| `price` | number | Product price |
+| `imageUrl` | string | Image path or URL |
+| `description` | string | Product details |
+| `stock` | number | Available quantity |
+
+#### Operations
+- **Create**: Admins can add products via a form.
+- **Read**: All users can view products (real-time sync with Firestore).
+- **Update**: Admins can edit any product.
+- **Delete**: Admins can remove products.
+
+---
+
+## 🔑 Role Management
+
+- After user signup, role is stored in Firestore (`users` collection).
+- Roles used:
+  - `admin`: Full access to product and order management.
+  - `user`: Can browse, add to cart, and place orders.
+
+### 🔁 How it's enforced:
+- On login, user role is fetched from Firestore.
+- Components/pages are conditionally rendered based on role.
+- Admin-only actions (like deleting a product) are hidden from normal users.
+
+---
+
+## 🧪 Admin Credentials (for testing)
+
